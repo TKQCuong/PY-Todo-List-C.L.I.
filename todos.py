@@ -66,9 +66,9 @@ def show_help_menu():
   print(colored('\t enter - "undone" or "u"', 'white'))
   print(colored('6. Show completed todos only:', 'blue'))
   print(colored('\t enter - "complete" or "c"', 'white'))
-  print(colored('6. Update the title of a todo:', 'blue'))
+  print(colored('7. Update the title of a todo:', 'blue'))
   print(colored('\t enter - "update" or "up"', 'white'))
-  print(colored('6. Deleted all todos:', 'blue'))
+  print(colored('8. Deleted all todos:', 'blue'))
   print(colored('\t enter - "reset"', 'white'))
   print(colored('-' * 100, 'green'))
 
