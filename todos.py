@@ -13,7 +13,7 @@ conn = sqlite3.connect(DEFAULT_PATH)
 cur = conn.cursor()
 
 sql = """
-  CREATE TABLE IF NOT EXISTS todos(f
+  CREATE TABLE IF NOT EXISTS todos(
     Id INTEGER PRIMARY KEY,
     Name TEXT NOT NULL,
     due_date TEXT NOT NULL,
