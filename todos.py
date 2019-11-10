@@ -44,12 +44,6 @@ def list():
       tablefmt="grid"))
     print(colored('*' * 89, 'yellow'))
 
-# def show_help_menu():
-#     print(tabulate(results, 
-#       headers=[
-#         ('Id'),
-
-
 def show_help_menu():
   os.system('cls' if os.name == 'nt' else 'clear')
   print(colored('Todo List Options:', 'yellow'))
@@ -114,15 +108,17 @@ def remove():
     conn.commit()
 
 def decideDelete():
-      print("-->Type any key to Reset all or Ctrl+C to Exit")
-      reset = input()
-      if reset == 'yes' or 'y':
-          sql = """
-              DELETE FROM todos 
-          """
-          print(colored("Deleted all !", 'red'))
-          cur.execute(sql)
-          conn.commit()
+    print('-->Type any key to reset all or enter "No" to get back to menu')
+    reset = input()
+    if reset == 'no' or reset == 'n' or reset == 'NO':
+        show_help_menu()
+    else:
+        sql = """
+            DELETE FROM todos 
+        """
+        print(colored("Deleted all !", 'red'))
+        cur.execute(sql)
+        conn.commit()
 
 def complete():
     sql = """
@@ -156,8 +152,6 @@ def update():
   print(colored("Updated !",'green'))
   cur.execute(sql, (title, Id))
   conn.commit()
-
-
 
 if __name__ == '__main__':
     # try:
